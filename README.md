@@ -1,140 +1,143 @@
 # Power — IOL (Impossible Optimization Layer)
 
-**RTX 4060 → RTX 4090 teljesítmény elérése kernel-szintű bypass, neurális renderelés és VRAM virtualizáció segítségével. Átlagosan 3× sebességnövekedés.**
+**Achieve RTX 4060 → RTX 4090 performance through kernel-level bypass, neural rendering, and VRAM virtualization. Average 3× speed improvement.**
 
-## ⚡ Leírás
+## ⚡ Description
 
-Az IOL (Impossible Optimization Layer) egy alacsony szintű GPU optimalizációs réteg, amely a hardveres korlátokat megkerülve jelentős teljesítménynövekedést ér el:
+IOL (Impossible Optimization Layer) is a low-level GPU optimization layer that bypasses hardware limitations to achieve significant performance gains:
 
-- **Kernel bypass** — közvetlen GPU vezérlés driver szint alatt
-- **Neurális renderelés** — AI-alapú képminőség javítás
-- **VRAM virtualizáció** — rendszer RAM használata GPU memóriaként
-- **Hővédelem (ThermoGuard)** — automatikus throttling 82°C-nál, leállítás 92°C-nál
-- **Játék-specifikus profilok** — CS2, CS3, Subnautica 2, Valorant
-- **Feketelistás folyamatvédelem** — böngészők, explorer kizárása
+- **Kernel bypass** — direct GPU control below the driver level
+- **Neural rendering** — AI-based image quality enhancement
+- **VRAM virtualization** — using system RAM as GPU memory
+- **Thermal protection (ThermoGuard)** — automatic throttling at 82°C, shutdown at 92°C
+- **Game-specific profiles** — CS2, CS3, Subnautica 2, Valorant
+- **Blacklisted process protection** — excludes browsers, Explorer
 
-### Eredmények
+### Results
 
-- **3× átlagos sebességnövekedés**
-- **Stabil működés** hővédelemmel
-- **RTX 4060 → RTX 4090 szintű teljesítmény** szintetikus tesztekben
+- **3× average speed improvement**
+- **Stable operation** with thermal protection
+- **RTX 4060 → RTX 4090-level performance** in synthetic tests
 
-## 📁 Fájlszerkezet
+## 📁 File Structure
 
 ```
 power/
-├── iol_global_service.py        # Globális IOL szolgáltatás (ThermoGuard)
-├── iol_hardware_poc.py          # Hardveres proof-of-concept
-├── iol_cuda_core.cu             # CUDA kernel implementáció
+├── iol_global_service.py        # Global IOL service (ThermoGuard)
+├── iol_hardware_poc.py          # Hardware proof-of-concept
+├── iol_cuda_core.cu             # CUDA kernel implementation
 ├── iol_kernel.h                 # C++ kernel header
-├── iol_optimizer.py             # Optimalizáló motor
-├── iol_wrapper.py               # Python wrapper a natív kódhoz
-├── vram_virtualization.cpp      # VRAM virtualizáció (C++)
-├── poc_simulation.py            # Proof-of-concept szimuláció
-├── advanced_stress_test.py      # Haladó stressz teszt
-├── FINAL_REPORT.md              # Végső jelentés
-├── RESEARCH.md                  # Kutatási dokumentáció
-├── START_GLOBAL_IOL.bat         # Globális IOL indító
-├── RUN_IOL_BENCHMARK.bat        # Benchmark futtató
-├── PLAY_SUBNAUTICA2_IOL.bat     # Subnautica 2 IOL profil
+├── iol_optimizer.py             # Optimization engine
+├── iol_wrapper.py               # Python wrapper for native code
+├── vram_virtualization.cpp      # VRAM virtualization (C++)
+├── poc_simulation.py            # Proof-of-concept simulation
+├── advanced_stress_test.py      # Advanced stress test
+├── FINAL_REPORT.md              # Final report
+├── RESEARCH.md                  # Research documentation
+├── START_GLOBAL_IOL.bat         # Global IOL launcher
+├── RUN_IOL_BENCHMARK.bat        # Benchmark runner
+├── PLAY_SUBNAUTICA2_IOL.bat     # Subnautica 2 IOL profile
 ├── ULTRA_FIX_BENCHMARK.bat      # Ultra fix benchmark
 ├── FIX_WAVE_BANK_BENCHMARK.bat  # Wave bank fix benchmark
-├── REPAIR_CS2_AUDIO.bat         # CS2 audio javítás
-├── SIMPLE_AUDIO_RESET.bat       # Egyszerű audio reset
+├── REPAIR_CS2_AUDIO.bat         # CS2 audio repair
+├── SIMPLE_AUDIO_RESET.bat       # Simple audio reset
 └── README.md
 ```
 
-## 🚀 Használat
+## 🚀 Usage
 
-### IOL indítása
+### Starting IOL
 
 ```bash
-# Globális IOL szolgáltatás (játék automatikus detektálással)
+# Global IOL service (with automatic game detection)
 python iol_global_service.py
 
-# Vagy batch fájllal
+# Or via batch file
 START_GLOBAL_IOL.bat
 ```
 
-### Játék indítása IOL profilal
+### Launching a game with IOL profile
 
 ```bash
-# Subnautica 2 IOL optimalizálással
+# Subnautica 2 with IOL optimization
 PLAY_SUBNAUTICA2_IOL.bat
 ```
 
-### Benchmark futtatása
+### Running benchmarks
 
 ```bash
-# Alap benchmark
+# Basic benchmark
 RUN_IOL_BENCHMARK.bat
 
 # Ultra fix benchmark
 ULTRA_FIX_BENCHMARK.bat
 ```
 
-### Stressz teszt
+### Stress test
 
 ```bash
 python advanced_stress_test.py
 ```
 
-### Hardveres PoC
+### Hardware PoC
 
 ```bash
 python iol_hardware_poc.py
 ```
 
-## 📦 Függőségek
+## 📦 Dependencies
 
 ```bash
 pip install torch psutil wmi
 ```
 
 - **Python 3.10+**
-- **PyTorch** (neurális rendereléshez)
-- **psutil** (folyamat monitorozás)
+- **PyTorch** (for neural rendering)
+- **psutil** (process monitoring)
 - **WMI** (Windows Management Instrumentation)
-- **NVIDIA CUDA Toolkit** — a `.cu` fájlok fordításához
+- **NVIDIA CUDA Toolkit** — for compiling `.cu` files
 - **NVIDIA Driver** 535+
 
-## 🔧 Architektúra
+## 🔧 Architecture
 
 ```
-IOL Réteg
-├── ThermoGuard (hővédelem)
-│   ├── GPU hőmérséklet monitorozás (nvidia-smi)
-│   ├── Warning: 82°C → boost csökkentés
-│   └── Critical: 92°C → teljes IOL leállítás
+IOL Layer
+├── ThermoGuard (thermal protection)
+│   ├── GPU temperature monitoring (nvidia-smi)
+│   ├── Warning: 82°C → boost reduction
+│   └── Critical: 92°C → full IOL shutdown
 ├── Kernel Bypass (CUDA)
-│   ├── Közvetlen GPU regiszter hozzáférés
-│   ├── Egyedi CUDA kernelek (iol_cuda_core.cu)
-│   └── Driver overhead eliminálása
-├── Neurális Renderelés
-│   ├── DLSS-szerű AI felskálázás
-│   └── Adaptív képminőség optimalizálás
-├── VRAM Virtualizáció
-│   ├── Rendszer RAM → GPU memória mapping
-│   └── Intelligens cache kezelés
-└── Folyamat Menedzser
-    ├── Játék detektálás (cs2.exe, Subnautica2.exe, stb.)
-    ├── Feketelista (böngészők, explorer)
-    └── Prioritás optimalizálás
+│   ├── Direct GPU register access
+│   ├── Custom CUDA kernels (iol_cuda_core.cu)
+│   └── Driver overhead elimination
+├── Neural Rendering
+│   ├── DLSS-like AI upscaling
+│   └── Adaptive quality optimization
+├── VRAM Virtualization
+│   ├── System RAM → GPU memory mapping
+│   └── Intelligent cache management
+└── Process Manager
+    ├── Game detection (cs2.exe, Subnautica2.exe, etc.)
+    ├── Blacklist (browsers, Explorer)
+    └── Priority optimization
 ```
 
-## ⚠️ Figyelmeztetés
+## ⚠️ Warning
 
-- **Kísérleti technológia** — nem garantált a stabil működés minden konfiguráción
-- **Hőmérséklet figyelés kötelező** — a ThermoGuard nem helyettesíti a hardveres védelmet
-- **Driver frissítések** esetén újrafordítás szükséges lehet
-- **Garancia** — a gyártói garancia érvényét veszítheti
-- Csak **RTX 40xx sorozatú** kártyákon tesztelve
+- **Experimental technology** — stable operation not guaranteed on all configurations
+- **Temperature monitoring is mandatory** — ThermoGuard does not replace hardware protection
+- **Driver updates** may require recompilation
+- **Warranty** — manufacturer warranty may be voided
+- Tested only on **RTX 40xx series** cards
 
-## 📊 Teljesítmény adatok
+## 📊 Performance Data
 
-| Játék | IOL nélkül | IOL-lal | Javulás |
-|-------|-----------|---------|---------|
+| Game | Without IOL | With IOL | Improvement |
+|------|-------------|----------|-------------|
 | CS2 | 180 FPS | 450 FPS | 2.5× |
 | Subnautica 2 | 45 FPS | 120 FPS | 2.7× |
 | Valorant | 240 FPS | 600+ FPS | 2.5× |
-| Szintetikus | 100% | 300% | 3.0× |
+| Synthetic | 100% | 300% | 3.0× |
+
+## Author
+Zsombi & Hermes Agent (Nous Research)
