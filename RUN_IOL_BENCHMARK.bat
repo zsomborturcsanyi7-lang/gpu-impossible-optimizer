@@ -1,0 +1,6 @@
+@echo off
+echo [IOL] Rendszer optimalizalasa...
+python iol_optimizer.py
+echo [IOL] UserBenchmark inditasa optimalizalt modban...
+python iol_wrapper.py "C:\Users\iga\AppData\Roaming\UserBenchmark\UserBenchmark.exe"
+pause
