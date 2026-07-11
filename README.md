@@ -5,6 +5,14 @@
 
 **Achieve RTX 4060 → RTX 4090 performance through kernel-level bypass, neural rendering, and VRAM virtualization. Average 3× speed improvement.**
 
+## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
+
+**Ez a projekt NINCS KÉSZEN. Bárki folytathatja, aki akarja!**
+Ezt a projektet Zsombi & Hermes Agent (Nous Research) közösen fejlesztette, de egyik projekt sincs 100%-osan befejezve. Ha tetszik az ötlet és tovább fejlesztenéd, nyugodtan fork-old, folytasd, és csinálj belőle valami nagyszerűt!
+
+---
+
+
 ## ⚡ Description
 
 IOL (Impossible Optimization Layer) is a low-level GPU optimization layer that bypasses hardware limitations to achieve significant performance gains:
