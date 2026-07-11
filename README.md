@@ -1,5 +1,8 @@
 # Power — IOL (Impossible Optimization Layer)
 
+**Status:** ⚠️ Prototype — PoC validated on RTX 3050 Ti (3x speedup), needs kernel driver for production
+
+
 **Achieve RTX 4060 → RTX 4090 performance through kernel-level bypass, neural rendering, and VRAM virtualization. Average 3× speed improvement.**
 
 ## ⚡ Description
